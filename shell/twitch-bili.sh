@@ -28,12 +28,14 @@ while true; do
   # 监控源直播间开播情况
   # Monitor live streams of specific channel
   while true; do
+    M3U8_URL=""
     LOG_PREFIX=$(date +"[%Y-%m-%d %H:%M:%S]")
     echo "$LOG_PREFIX 尝试获取直播流。Try to get current live stream of twitch.tv/$1"
 
     # 获取直播源 m3u8 地址
     # Get the m3u8 address with streamlink
     M3U8_URL=$(streamlink --stream-url "twitch.tv/$TWITCH_ID" "$FORMAT")
+    echo "直播流：$M3U8_URL"
     (echo "$M3U8_URL" | grep -q ".m3u8") && break
 
     echo "$LOG_PREFIX 源直播间没有开播。The stream is not available now."
