@@ -51,17 +51,20 @@ const stopWatch = async ({ biliRoom }) => {
   let pidFile = `${ biliRoom }.live.pid`
   let pid = (fs.readFileSync(pidFile) + '').trim()
   let cmd = `kill -9 ${pid}`
-
-  try {
-    let pidFile = `../shell/${ biliRoom }.ffmpeg.pid`
-    let pid = (fs.readFileSync(pidFile) + '').trim()
-    let cmd = `kill -9 ${pid}`
-  } catch (e) {}
-
   exec(cmd, { 
     detached: true,
   })
   fs.unlinkSync(pidFile)
+
+  try {
+    let pidFile = `${ biliRoom }.ffmpeg.pid`
+    let pid = (fs.readFileSync(pidFile) + '').trim()
+    let cmd = `kill -9 ${pid}`
+    exec(cmd, { 
+      detached: true,
+    })
+  } catch (e) {}
+
   return {
     biliRoom
   }
