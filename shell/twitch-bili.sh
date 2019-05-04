@@ -18,6 +18,7 @@ LOOP="${5:-loop}"
 INTERVAL="${6:-10}"
 
 echo $TWITCH_ID
+echo $BILI_ROOM
 echo $RTMP_URL
 echo $FORMAT
 echo $LOOP
@@ -42,6 +43,9 @@ while true; do
 
   # 如果开播了，开始转播推流
 
+  # 开启 bili 直播间
+  node ../web/start.js "$BILI_ROOM"
+
   # 录像参数
   # Record using MPEG-2 TS format to avoid broken file caused by interruption
   # FNAME="twitch_${1}_$(date +"%Y%m%d_%H%M%S").ts"
@@ -51,9 +55,9 @@ while true; do
   # Start recording
   # ffmpeg -i "$M3U8_URL" -codec copy -f mpegts "$FNAME" > "$FNAME.log" 2>&1
 
+  # 转播
   ffmpeg -i "$M3U8_URL" \
-    -vcodec copy -acodec aac -strict -2 -f flv "$RTMP_URL" \
-    > "$FNAME.log" 2>&1
+    -vcodec copy -acodec aac -strict -2 -f flv "$RTMP_URL"
 
   # Exit if we just need to record current stream
   LOG_PREFIX=$(date +"[%Y-%m-%d %H:%M:%S]")
