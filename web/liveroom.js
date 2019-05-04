@@ -56,10 +56,10 @@ const stopWatch = async ({ biliRoom }) => {
   })
   fs.unlinkSync(pidFile)
 
+  // 关闭 ffmpeg 进程
   try {
-    let pidFile = `${ biliRoom }.ffmpeg.pid`
-    let pid = (fs.readFileSync(pidFile) + '').trim()
-    let cmd = `kill -9 ${pid}`
+    let data = JSON.parse(fs.readFileSync(`${ biliRoom }.live.json`))
+    let cmd = `ps x | grep "${ data.rtmpUrl }" | grep -v grep | awk '{print $1}' | xargs kill -9`
     exec(cmd, { 
       detached: true,
     })
