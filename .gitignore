@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+
+*.cookie
+*.live.json
+*.live.log
+*.live.pid
+
+room.json
