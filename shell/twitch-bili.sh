@@ -4,7 +4,7 @@
 
 # 参数格式检查
 if [[ ! -n "$1" ]]; then
-  echo "usage: $0 twitch_id rtmp [format] [loop|once] [interval]"
+  echo "usage: $0 twitch_id biliRoom rtmp [format] [loop|once] [interval]"
   exit 1
 fi
 
@@ -56,6 +56,7 @@ while true; do
   # ffmpeg -i "$M3U8_URL" -codec copy -f mpegts "$FNAME" > "$FNAME.log" 2>&1
 
   # 转播
+  echo "ffmpeg -i $M3U8_URL -vcodec copy -acodec aac -strict -2 -f flv $RTMP_URL"
   ffmpeg -i "$M3U8_URL" -vcodec copy -acodec aac -strict -2 -f flv "$RTMP_URL"
 
   # Exit if we just need to record current stream
