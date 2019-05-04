@@ -56,8 +56,7 @@ while true; do
   # ffmpeg -i "$M3U8_URL" -codec copy -f mpegts "$FNAME" > "$FNAME.log" 2>&1
 
   # 转播
-  ffmpeg -i "$M3U8_URL" \
-    -vcodec copy -acodec aac -strict -2 -f flv "$RTMP_URL"
+  ffmpeg -i "$M3U8_URL" -vcodec copy -acodec aac -strict -2 -f flv "$RTMP_URL"
 
   # Exit if we just need to record current stream
   LOG_PREFIX=$(date +"[%Y-%m-%d %H:%M:%S]")
