@@ -2,9 +2,6 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 
-const api = require('../lib/api')
-const { roomId, cookie } = require('../room.json')
-
 const liveroom = require('./liveroom')
 
 app.use(bodyParser.json())
