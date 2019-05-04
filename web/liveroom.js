@@ -50,7 +50,14 @@ const startWatch = async ({ twitchId, biliRoom, cookie }) => {
 const stopWatch = async ({ biliRoom }) => {
   let pidFile = `${ biliRoom }.live.pid`
   let pid = (fs.readFileSync(pidFile) + '').trim()
-  let cmd = `kill ${pid}`
+  let cmd = `kill -9 ${pid}`
+
+  try {
+    let pidFile = `../shell/${ biliRoom }.ffmpeg.pid`
+    let pid = (fs.readFileSync(pidFile) + '').trim()
+    let cmd = `kill -9 ${pid}`
+  } catch (e) {}
+
   exec(cmd, { 
     detached: true,
   })

@@ -57,7 +57,7 @@ while true; do
 
   # 转播
   ffmpeg -i "$M3U8_URL" \
-    -vcodec copy -acodec aac -strict -2 -f flv "$RTMP_URL"
+    -vcodec copy -acodec aac -strict -2 -f flv "$RTMP_URL" & echo $! > "$BILI_ROOM.ffmpeg.pid"
 
   # Exit if we just need to record current stream
   LOG_PREFIX=$(date +"[%Y-%m-%d %H:%M:%S]")

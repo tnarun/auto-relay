@@ -46,6 +46,8 @@ app.get('/getLiving', (req, resp) => {
   })
 })
 
+// 打开 80 端口
+// https://www.cnblogs.com/zhansu/p/9231793.html
 app.listen(80, function () {
   console.log('Example app listening on port 80!')
 })
