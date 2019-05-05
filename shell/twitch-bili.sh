@@ -27,8 +27,8 @@ echo $INTERVAL
 while true; do
   # 监控源直播间开播情况
   # Monitor live streams of specific channel
+  unset M3U8_URL
   while true; do
-    M3U8_URL=""
     LOG_PREFIX=$(date +"[%Y-%m-%d %H:%M:%S]")
     echo "$LOG_PREFIX 尝试获取直播流。Try to get current live stream of twitch.tv/$1"
 

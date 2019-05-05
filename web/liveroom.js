@@ -37,6 +37,7 @@ const startWatch = async ({ twitchId, biliRoom, cookie }) => {
   // let shFile = `../shell/test-cmd.sh`
   let shFile = `../shell/twitch-bili.sh ${ twitchId } ${ biliRoom } "${ rtmpUrl }"`
   let cmd = `nohup sh ${ shFile } > ${ biliRoom }.live.log & echo $! > ${ biliRoom }.live.pid`
+  fs.writeFileSync(`${ biliRoom }.live.cmd`, cmd)
   exec(cmd, { 
     detached: true,
   })
