@@ -1,0 +1,3 @@
+nohup sh ../shell/twitch-bili.sh rpglimitbreak 38593 "rtmp://txy.live-send.acg.tv/live-txy/?streamname=live_599126_3727264&key=77895bab878b2fd4eb3a822ddc99c013" > 38593.live.log & echo $! > 38593.live.pid
+
+node start.js 38593

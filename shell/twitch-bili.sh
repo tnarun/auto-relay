@@ -46,7 +46,7 @@ while true; do
   # 如果开播了，开始转播推流
 
   # 开启 bili 直播间
-  node ../web/start.js "$BILI_ROOM"
+  # node ../web/start.js "$BILI_ROOM"
 
   # 录像参数
   # Record using MPEG-2 TS format to avoid broken file caused by interruption
