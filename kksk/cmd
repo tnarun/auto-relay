@@ -1,4 +1,6 @@
-sh twitch-huya.sh 114514 bj
-sh twitch-huya.sh 114514 lz
-sh twitch-huya.sh 114514 wx
-sh twitch-huya.sh 114514 2z
+nohup sh twitch-huya.sh 114514 bj >bj.log 2>&1 &
+nohup sh twitch-huya.sh 114514 lz >lz.log 2>&1 &
+nohup sh twitch-huya.sh 114514 wx >wx.log 2>&1 &
+nohup sh twitch-huya.sh 114514 2z >2z.log 2>&1 &
+
+nohup sh twitch-huya.sh 114514 ben7th >ben7th.log 2>&1 &
