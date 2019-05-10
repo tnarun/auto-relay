@@ -21,7 +21,7 @@ while true; do
   unset M3U8_URL
   while true; do
     LOG_PREFIX=$(date +"[%Y-%m-%d %H:%M:%S]")
-    echo "$LOG_PREFIX 尝试获取直播流。Try to get current live stream of twitch.tv/$1"
+    echo "$LOG_PREFIX 尝试获取直播流。Try to get current live stream of $1"
 
     # 获取直播源 m3u8 地址
     # Get the m3u8 address with streamlink
