@@ -7,7 +7,7 @@ if [[ ! -n "$1" ]]; then
   exit 1
 fi
 
-HUYA_ROOM="twitch.com/$1"
+HUYA_ROOM="twitch.tv/$1"
 RTMP_URL=$(cat $2.rtmp)
 INTERVAL="10"
 
