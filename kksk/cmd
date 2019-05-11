@@ -1,6 +1,6 @@
 nohup sh kksk-huya.sh 114514 bj >bj.log 2>&1 &
-nohup sh kksk-huya.sh 114514 lz >lz.log 2>&1 &
 nohup sh kksk-huya.sh 114514 wx >wx.log 2>&1 &
+nohup sh kksk-huya.sh 114514 lz >lz.log 2>&1 &
 nohup sh kksk-huya.sh 114514 2z >2z.log 2>&1 &
 
 nohup sh kksk-huya.sh 114514 ben7th >ben7th.log 2>&1 &
